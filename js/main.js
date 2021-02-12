@@ -1,11 +1,11 @@
 $(function() {
 
 //page scrolling script
-  $('.fullpage').fullpage({
-   scrollHorizontally: true,
-   scrollOverflow: true,
-   sectionSelector: '.page',
- });
+$('.fullpage').fullpage({
+ scrollHorizontally: true,
+ scrollOverflow: true,
+ sectionSelector: '.page',
+});
 
   //stylization of the select
   $('.custom-select').styler();
@@ -48,4 +48,20 @@ var projectSlider = new Swiper('.projects__slider', {
 });
 
 
+  $('.work__slide-images').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    tLoading: 'Loading images #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+    }
+  });
+
+
 });
+
