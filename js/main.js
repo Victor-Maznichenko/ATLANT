@@ -64,3 +64,4 @@ var projectSlider = new Swiper('.projects__slider', {
 
 
 });
+
