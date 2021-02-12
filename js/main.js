@@ -48,20 +48,19 @@ var projectSlider = new Swiper('.projects__slider', {
 });
 
 
-  $('.work__slide-images').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading images #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-    },
-    image: {
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-    }
-  });
+$('.work__slide-images').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  tLoading: 'Loading images #%curr%...',
+  mainClass: 'mfp-img-mobile',
+  gallery: {
+    enabled: true,
+    navigateByImgClick: true,
+  },
+  image: {
+    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  }
+});
 
 
 });
-
