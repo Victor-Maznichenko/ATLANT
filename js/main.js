@@ -1,3 +1,12 @@
+
+//custom cursor
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+  cursor.setAttribute('style', 'top:' +(e.pageY - 8)+'px;left:'+(e.pageX - 8)+'px;');
+});
+
+
 //Parallax images on the page work
 document.addEventListener('mousemove', parallax);
 function parallax(e){
@@ -11,14 +20,36 @@ function parallax(e){
   }
 });
 }
+
 $(function() {
 
-  //page scrolling script
-  $('.fullpage').fullpage({
-   scrollHorizontally: true,
-   scrollOverflow: true,
-   sectionSelector: '.page',
- });
+  $('a, input, textarea, button, .pointer').on('mouseenter', function(){
+    $('.cursor').addClass('active').removeClass('leave');
+  });
+  $('a, input, textarea, button, .pointer').on('mouseleave', function(){
+    $('.cursor').removeClass('active').addClass('leave');
+  });
+//page scrolling script
+var fullpage = new Swiper('.fullpage', {
+  wrapperClass: 'fullpage-wrapper',
+  slideClass: 'fullpage-slide',
+  direction: 'vertical',
+  slidesPerView: 1,
+  speed: 800,
+  mousewheel: true,
+});
+
+//Scroll for fullpage
+var scroll = new Swiper('.swiper-container', {
+  direction: 'vertical',
+  slidesPerView: 'auto',
+  freeMode: true,
+  nested: true,
+  mousewheel: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 
   //stylization of the select
   $('.custom-select').styler();
@@ -126,13 +157,5 @@ var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   },
 });
 
-var scroll = new Swiper('.swiper-container', {
-  direction: 'vertical',
-  slidesPerView: 'auto',
-  freeMode: true,
-  mousewheel: true,
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+
 });
