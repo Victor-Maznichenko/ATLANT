@@ -29,6 +29,12 @@ $(function() {
   $('a, input, textarea, button, .pointer').on('mouseleave', function(){
     $('.cursor').removeClass('active').addClass('leave');
   });
+  $('.projects__slider, .firm__sponsors-slider').on('mouseenter', function(){
+    $('.cursor').addClass('active hide').removeClass('leave');
+  });
+  $('.projects__slider, .firm__sponsors-slider').on('mouseleave', function(){
+    $('.cursor').removeClass('active hide').addClass('leave hidenormal');
+  });
 //page scrolling script
 var fullpage = new Swiper('.fullpage', {
   wrapperClass: 'fullpage-wrapper',

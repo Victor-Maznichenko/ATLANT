@@ -200,6 +200,10 @@ body {
   opacity: 1;
 }
 
+.cursor.hide:after {
+  opacity: 0;
+}
+
 input,
 button,
 textarea {
@@ -1091,6 +1095,12 @@ h6 {
   list-style: none;
   padding: 0;
   z-index: 1;
+  cursor: url("../images/grab-cursor.png") 35 35, auto !important;
+}
+
+.projects__slider *,
+.firm__sponsors-slider * {
+  cursor: url("../images/grab-cursor.png") 35 35, auto !important;
 }
 
 .projects__slider-wrapper,
@@ -1859,7 +1869,6 @@ h6 {
 .firm__sponsors-slider {
   overflow: visible;
   width: 100%;
-  cursor: url("../images/grab-cursor.png") 35 35, auto !important;
 }
 
 .firm__sponsors-wrapper {
