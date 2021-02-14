@@ -53,7 +53,6 @@ var workslider = new Swiper('.work__slider', {
   spaceBetween: 200,
   direction: 'vertical',
   effect: 'fade',
-  speed: 0,
   loop: true,
   observer: true,
   observeParents: true,
@@ -73,8 +72,9 @@ var workslider = new Swiper('.work__slider', {
   },
 });
 
+
 //Gallery for each slide on the page work
-$('.work__slide-images').each(function(){
+$('.work__slide-images, .service__article').each(function(){
   $(this).magnificPopup({
     delegate: 'a',
     type: 'image',
@@ -106,19 +106,33 @@ filter.on('click', function(){
 });
 
 //Slider sponsors on the page about
-var sponsorsSlider = new Swiper('.about__sponsors-slider', {
-  wrapperClass: 'about__sponsors-wrapper',
-  slideClass: 'about__sponsors-slide',
+var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
+  wrapperClass: 'firm__sponsors-wrapper',
+  slideClass: 'firm__sponsors-slide',
   mousewheel: true,
   spaceBetween: 50,
+  slidesPerView: 'auto',
+  speed: 1000,
+  slidesPerGroup: 5,
+  nested: true,
   speed: 500,
-  loop: true,
   pagination: {
-    el: '.about__sponsors-pagination',
+    el: '.firm__sponsors-pagination',
     clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
+  },
+  navigation: {
+    nextEl: '.firm__sponsors-next',
+    prevEl: '.firm__sponsors-prev',
+  },
+});
+
+var scroll = new Swiper('.swiper-container', {
+  direction: 'vertical',
+  slidesPerView: 'auto',
+  freeMode: true,
+  mousewheel: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
   },
 });
 });
