@@ -23,10 +23,10 @@ function parallax(e){
 
 $(function() {
 
-  $('a, input, textarea, button, .pointer').on('mouseenter', function(){
+  $('a, input, textarea, button, .pointer, .work__slide-images').on('mouseenter', function(){
     $('.cursor').addClass('active').removeClass('leave');
   });
-  $('a, input, textarea, button, .pointer').on('mouseleave', function(){
+  $('a, input, textarea, button, .pointer, .work__slide-images').on('mouseleave', function(){
     $('.cursor').removeClass('active').addClass('leave');
   });
   $('.projects__slider, .firm__sponsors-slider').on('mouseenter', function(){
@@ -41,6 +41,7 @@ var fullpage = new Swiper('.fullpage', {
   slideClass: 'fullpage-slide',
   direction: 'vertical',
   slidesPerView: 1,
+  allowTouchMove: false,
   speed: 800,
   mousewheel: true,
 });
@@ -50,6 +51,7 @@ var scroll = new Swiper('.swiper-container', {
   direction: 'vertical',
   slidesPerView: 'auto',
   freeMode: true,
+  allowTouchMove: false,
   nested: true,
   mousewheel: true,
   scrollbar: {
@@ -89,12 +91,16 @@ var workslider = new Swiper('.work__slider', {
   normalizeSlideIndex: true,
   spaceBetween: 200,
   direction: 'vertical',
+  allowTouchMove: false,
   effect: 'fade',
   loop: true,
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
   hashNavigation: true,
+  fadeEffect: {
+    crossFade: true
+  },
   pagination: {
     el: '.work__pagination',
     clickable: true,
