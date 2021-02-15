@@ -152,8 +152,10 @@ body {
   cursor: none;
 }
 
-.mfp-zoom-out-cur {
-  cursor: url(../images/fff.png) 15 15, auto;
+.mfp-zoom-out-cur,
+button.mfp-close,
+button.mfp-arrow {
+  cursor: none;
 }
 
 .cursor {

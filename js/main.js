@@ -23,10 +23,10 @@ function parallax(e){
 
 $(function() {
 
-  $('a, input, textarea, button, .pointer, .work__slide-images').on('mouseenter', function(){
+  $('a, input, textarea, button, .pointer').on('mouseenter', function(){
     $('.cursor').addClass('active').removeClass('leave');
   });
-  $('a, input, textarea, button, .pointer, .work__slide-images').on('mouseleave', function(){
+  $('a, input, textarea, button, .pointer').on('mouseleave', function(){
     $('.cursor').removeClass('active').addClass('leave');
   });
   $('.projects__slider, .firm__sponsors-slider').on('mouseenter', function(){
