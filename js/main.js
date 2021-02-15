@@ -5,9 +5,8 @@ const cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', e => {
   cursor.setAttribute('style', 'top:' +(e.pageY - 8)+'px;left:'+(e.pageX - 8)+'px;');
 });
-
-document.addEventListener('touchstart', () => {
-  document.querySelector('body').classList.add('mobile');
+document.addEventListener('mousemove', e => {
+  cursor.classList.add('show');
 });
 
 //Parallax images on the page work
@@ -44,7 +43,6 @@ var fullpage = new Swiper('.fullpage', {
   slideClass: 'fullpage-slide',
   direction: 'vertical',
   slidesPerView: 1,
-  allowTouchMove: false,
   speed: 800,
   mousewheel: true,
 });
@@ -172,5 +170,11 @@ var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   },
 });
 
+//Mobile scripts
+$(document).on('touchstart', () => {
+  $('body').addClass('mobile');
+  $('.fullpage-slide').removeClass('swiper-no-swiping');
+  fullpage.update();
+});
 
 });
