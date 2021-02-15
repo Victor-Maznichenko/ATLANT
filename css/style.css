@@ -118,6 +118,10 @@ a {
   cursor: auto;
 }
 
+.mobile .cursor {
+  display: none;
+}
+
 .mobile .mfp-zoom-out-cur,
 button.mfp-close,
 button.mfp-arrow,
