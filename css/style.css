@@ -114,6 +114,17 @@ a {
   cursor: none;
 }
 
+.mobile {
+  cursor: auto;
+}
+
+.mobile .mfp-zoom-out-cur,
+button.mfp-close,
+button.mfp-arrow,
+* {
+  cursor: auto;
+}
+
 *,
 *:before,
 *:after {
@@ -2194,4 +2205,10 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 900px) {
+  .cursor {
+    display: none;
+  }
 }

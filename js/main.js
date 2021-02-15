@@ -6,6 +6,9 @@ document.addEventListener('mousemove', e => {
   cursor.setAttribute('style', 'top:' +(e.pageY - 8)+'px;left:'+(e.pageX - 8)+'px;');
 });
 
+document.addEventListener('touchstart', () => {
+  document.querySelector('body').classList.add('mobile');
+});
 
 //Parallax images on the page work
 document.addEventListener('mousemove', parallax);
