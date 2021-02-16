@@ -50,6 +50,15 @@ var fullpage = new Swiper('.fullpage', {
   mousewheel: true,
 });
 
+//Hide/show header
+fullpage.on('slideChangeTransitionEnd', function(){
+  if (fullpage.activeIndex == 0) {
+    $('.header').addClass('show');
+  } else{
+    $('.header').removeClass('show');
+  }
+});
+
 //Scroll for fullpage
 const scroll = new Swiper('.swiper-container', {
   direction: 'vertical',

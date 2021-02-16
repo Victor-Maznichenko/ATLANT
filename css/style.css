@@ -569,10 +569,16 @@ h6 {
   box-sizing: border-box;
 }
 
-/*.sec{
-	padding-top: 125px;
-	width: 100%;
-	}*/
+.bg {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.sec {
+  padding-top: 125px;
+  width: 100%;
+}
 
 .title-h4 {
   font-weight: bold;
@@ -771,6 +777,12 @@ h6 {
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
+}
+
+.header.show {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .header__top {
@@ -1407,7 +1419,7 @@ h6 {
   overflow: visible;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  height: calc(100% - 84px);
+  min-height: 625px;
 }
 
 .about__item {
