@@ -89,17 +89,24 @@ $(window).resize(function () {
 const projectSlider = new Swiper('.projects__slider', {
   wrapperClass: 'projects__slider-wrapper',
   slideClass: 'projects__slide',
-  slidesPerView: 'auto',
-  spaceBetween: 128,
   centeredSlides: true,
-  observeParents: true,
-  observeSlideChildren: true,
-  observer: true,
+  slidesPerView: 'auto',
   loop: true,
   pagination: {
     el: '.projects__slider-pagination',
     type: 'fraction',
   },
+  breakpoints: {
+    320: {
+      spaceBetween: 40,
+    },
+    521: {
+      spaceBetween: 84,
+    },
+    881: {
+      spaceBetween: 128,
+    },
+  }
 });
 
 //Slider on the page work
@@ -192,8 +199,9 @@ const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
 //Mobile scripts
 $(document).on('touchstart', () => {
   $('body').addClass('mobile');
-  fullpage.allowTouchMove == true;
-  fullpage.update();
+  fullpage.destroy(true, true);
+  scroll.destroy(true, true);
+  $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
 });
 
 
