@@ -168,7 +168,7 @@ body {
   font-family: "Exo 2", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 162.5%;
   letter-spacing: 0.5px;
   color: var(--gray);
   background-color: var(--black);
@@ -392,6 +392,28 @@ h6 {
   line-height: 108%;
 }
 
+.fullpage-none .fullpage {
+  height: auto;
+  overflow: visible;
+}
+
+.fullpage-none .fullpage .fullpage-slide {
+  height: auto;
+  min-height: auto;
+}
+
+.fullpage-none .fullpage .services {
+  width: 100%;
+}
+
+.fullpage-none .fullpage .swiper-container {
+  height: auto;
+}
+
+.fullpage-none .fullpage .swiper-scrollbar {
+  display: none;
+}
+
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -441,7 +463,7 @@ h6 {
       flex-shrink: 0;
   width: 100%;
   background-color: var(--black);
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
   display: -webkit-box;
@@ -2292,6 +2314,35 @@ h6 {
   .services__info-title {
     margin-bottom: 20px;
   }
+
+  .contacts__inner,
+  .main,
+  .services,
+  .projects,
+  .advantages__inner {
+    padding: 80px 0;
+  }
+
+  .services__gallery {
+    margin-bottom: 40px;
+  }
+
+  .contacts__info {
+    min-height: auto;
+    margin-bottom: 40px;
+  }
+
+  .about__inner {
+    min-height: 660px;
+  }
+
+  .services__gallery {
+    max-width: 60%;
+  }
+
+  .services__info {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 880px) {
@@ -2325,6 +2376,35 @@ h6 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+
+  .contacts__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .advantages__inner {
+    padding-bottom: 50px;
+  }
+
+  .about {
+    padding-top: 70px;
+  }
+
+  .about__item-title {
+    font-size: 35px;
+  }
+
+  .projects__slide-img {
+    max-width: 355px;
+    margin-bottom: 10px;
+  }
+
+  .projects__slide-title {
+    font-size: calc(19px + (36 - 19) * ((100vw - 880px)/ (1440 - 880)));
+    line-height: 125%;
   }
 }
 

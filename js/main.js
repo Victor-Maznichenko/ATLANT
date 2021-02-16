@@ -37,18 +37,21 @@ $(function() {
   $('.projects__slider, .firm__sponsors-slider').on('mouseleave', function(){
     $('.cursor').removeClass('active hide').addClass('leave hidenormal');
   });
+
+
 //page scrolling script
 var fullpage = new Swiper('.fullpage', {
   wrapperClass: 'fullpage-wrapper',
   slideClass: 'fullpage-slide',
   direction: 'vertical',
+  allowTouchMove: false,
   slidesPerView: 1,
   speed: 800,
   mousewheel: true,
 });
 
 //Scroll for fullpage
-var scroll = new Swiper('.swiper-container', {
+const scroll = new Swiper('.swiper-container', {
   direction: 'vertical',
   slidesPerView: 'auto',
   freeMode: true,
@@ -60,6 +63,21 @@ var scroll = new Swiper('.swiper-container', {
   },
 });
 
+//Remove the stagnant scrolling when adaptive
+function resizeScrenn() {
+  if ($(window).width() <=  880) {
+    fullpage.destroy(true, true);
+    scroll.destroy(true, true);
+    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+  }
+}
+resizeScrenn();
+$(window).resize(function () {
+  resizeScrenn();
+});
+
+
+
   //stylization of the select
   $('.custom-select').styler();
 
@@ -68,7 +86,7 @@ var scroll = new Swiper('.swiper-container', {
   });
 
 //page scrolling script
-var projectSlider = new Swiper('.projects__slider', {
+const projectSlider = new Swiper('.projects__slider', {
   wrapperClass: 'projects__slider-wrapper',
   slideClass: 'projects__slide',
   slidesPerView: 'auto',
@@ -85,7 +103,7 @@ var projectSlider = new Swiper('.projects__slider', {
 });
 
 //Slider on the page work
-var workslider = new Swiper('.work__slider', {
+const workslider = new Swiper('.work__slider', {
   wrapperClass: 'work__slider-wrapper',
   slideClass: 'work__slide',
   mousewheel: true,
@@ -143,14 +161,14 @@ $('.work__slide-images, .service__article').each(function(){
 })
 
 //Filter styles on click
-var filter = $('.filters__item');
+const filter = $('.filters__item');
 filter.on('click', function(){
   filter.removeClass('active');
   $(this).addClass('active');
 });
 
 //Slider sponsors on the page about
-var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
+const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   wrapperClass: 'firm__sponsors-wrapper',
   slideClass: 'firm__sponsors-slide',
   mousewheel: true,
@@ -170,11 +188,14 @@ var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   },
 });
 
+
 //Mobile scripts
 $(document).on('touchstart', () => {
   $('body').addClass('mobile');
-  $('.fullpage-slide').removeClass('swiper-no-swiping');
+  fullpage.allowTouchMove == true;
   fullpage.update();
 });
 
+
 });
+
