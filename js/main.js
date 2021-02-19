@@ -5,9 +5,7 @@ const cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', e => {
   cursor.setAttribute('style', 'top:' +(e.pageY - 8)+'px;left:'+(e.pageX - 8)+'px;');
 });
-document.addEventListener('mousemove', e => {
-  cursor.classList.add('show');
-});
+
 
 //Parallax images on the page work
 document.addEventListener('mousemove', parallax);
@@ -37,55 +35,27 @@ $(function() {
   $('.projects__slider, .firm__sponsors-slider').on('mouseleave', function(){
     $('.cursor').removeClass('active hide').addClass('leave hidenormal');
   });
-
-
 //page scrolling script
 var fullpage = new Swiper('.fullpage', {
   wrapperClass: 'fullpage-wrapper',
   slideClass: 'fullpage-slide',
   direction: 'vertical',
-  allowTouchMove: false,
   slidesPerView: 1,
   speed: 800,
   mousewheel: true,
 });
 
-//Hide/show header
-fullpage.on('slideChangeTransitionEnd', function(){
-  if (fullpage.activeIndex == 0) {
-    $('.header').addClass('show');
-  } else{
-    $('.header').removeClass('show');
-  }
-});
-
 //Scroll for fullpage
-const scroll = new Swiper('.swiper-container', {
+var scroll = new Swiper('.swiper-container', {
   direction: 'vertical',
   slidesPerView: 'auto',
   freeMode: true,
-  allowTouchMove: false,
   nested: true,
   mousewheel: true,
   scrollbar: {
     el: '.swiper-scrollbar',
   },
 });
-
-//Remove the stagnant scrolling when adaptive
-function resizeScrenn() {
-  if ($(window).width() <=  880) {
-    fullpage.destroy(true, true);
-    scroll.destroy(true, true);
-    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
-  }
-}
-resizeScrenn();
-$(window).resize(function () {
-  resizeScrenn();
-});
-
-
 
   //stylization of the select
   $('.custom-select').styler();
@@ -95,47 +65,36 @@ $(window).resize(function () {
   });
 
 //page scrolling script
-const projectSlider = new Swiper('.projects__slider', {
+var projectSlider = new Swiper('.projects__slider', {
   wrapperClass: 'projects__slider-wrapper',
   slideClass: 'projects__slide',
-  centeredSlides: true,
   slidesPerView: 'auto',
+  spaceBetween: 128,
+  centeredSlides: true,
+  observeParents: true,
+  observeSlideChildren: true,
+  observer: true,
   loop: true,
   pagination: {
     el: '.projects__slider-pagination',
     type: 'fraction',
   },
-  breakpoints: {
-    320: {
-      spaceBetween: 40,
-    },
-    521: {
-      spaceBetween: 84,
-    },
-    881: {
-      spaceBetween: 128,
-    },
-  }
 });
 
 //Slider on the page work
-const workslider = new Swiper('.work__slider', {
+var workslider = new Swiper('.work__slider', {
   wrapperClass: 'work__slider-wrapper',
   slideClass: 'work__slide',
   mousewheel: true,
   normalizeSlideIndex: true,
   spaceBetween: 200,
   direction: 'vertical',
-  allowTouchMove: false,
   effect: 'fade',
   loop: true,
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
   hashNavigation: true,
-  fadeEffect: {
-    crossFade: true
-  },
   pagination: {
     el: '.work__pagination',
     clickable: true,
@@ -177,14 +136,14 @@ $('.work__slide-images, .service__article').each(function(){
 })
 
 //Filter styles on click
-const filter = $('.filters__item');
+var filter = $('.filters__item');
 filter.on('click', function(){
   filter.removeClass('active');
   $(this).addClass('active');
 });
 
 //Slider sponsors on the page about
-const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
+var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   wrapperClass: 'firm__sponsors-wrapper',
   slideClass: 'firm__sponsors-slide',
   mousewheel: true,
@@ -205,14 +164,4 @@ const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
 });
 
 
-//Mobile scripts
-$(document).on('touchstart', () => {
-  $('body').addClass('mobile');
-  fullpage.destroy(true, true);
-  scroll.destroy(true, true);
-  $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
 });
-
-
-});
-
