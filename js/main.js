@@ -5,7 +5,9 @@ const cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', e => {
   cursor.setAttribute('style', 'top:' +(e.pageY - 8)+'px;left:'+(e.pageX - 8)+'px;');
 });
-
+document.addEventListener('mousemove', e => {
+  cursor.classList.add('show');
+});
 
 //Parallax images on the page work
 document.addEventListener('mousemove', parallax);
@@ -35,27 +37,6 @@ $(function() {
   $('.projects__slider, .firm__sponsors-slider').on('mouseleave', function(){
     $('.cursor').removeClass('active hide').addClass('leave hidenormal');
   });
-//page scrolling script
-var fullpage = new Swiper('.fullpage', {
-  wrapperClass: 'fullpage-wrapper',
-  slideClass: 'fullpage-slide',
-  direction: 'vertical',
-  slidesPerView: 1,
-  speed: 800,
-  mousewheel: true,
-});
-
-//Scroll for fullpage
-var scroll = new Swiper('.swiper-container', {
-  direction: 'vertical',
-  slidesPerView: 'auto',
-  freeMode: true,
-  nested: true,
-  mousewheel: true,
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
 
   //stylization of the select
   $('.custom-select').styler();
@@ -65,50 +46,28 @@ var scroll = new Swiper('.swiper-container', {
   });
 
 //page scrolling script
-var projectSlider = new Swiper('.projects__slider', {
+const projectSlider = new Swiper('.projects__slider', {
   wrapperClass: 'projects__slider-wrapper',
   slideClass: 'projects__slide',
-  slidesPerView: 'auto',
-  spaceBetween: 128,
   centeredSlides: true,
-  observeParents: true,
-  observeSlideChildren: true,
-  observer: true,
+  slidesPerView: 'auto',
   loop: true,
   pagination: {
     el: '.projects__slider-pagination',
     type: 'fraction',
   },
-});
-
-//Slider on the page work
-var workslider = new Swiper('.work__slider', {
-  wrapperClass: 'work__slider-wrapper',
-  slideClass: 'work__slide',
-  mousewheel: true,
-  normalizeSlideIndex: true,
-  spaceBetween: 200,
-  direction: 'vertical',
-  effect: 'fade',
-  loop: true,
-  observer: true,
-  observeParents: true,
-  observeSlideChildren: true,
-  hashNavigation: true,
-  pagination: {
-    el: '.work__pagination',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
+  breakpoints: {
+    320: {
+      spaceBetween: 40,
     },
-  },
-  on: {
-    init: function () {
-      $('.work__slider').removeClass('hide');
+    521: {
+      spaceBetween: 84,
     },
-  },
+    881: {
+      spaceBetween: 128,
+    },
+  }
 });
-
 
 //Gallery for each slide on the page work
 $('.work__slide-images, .service__article').each(function(){
@@ -136,14 +95,14 @@ $('.work__slide-images, .service__article').each(function(){
 })
 
 //Filter styles on click
-var filter = $('.filters__item');
+const filter = $('.filters__item');
 filter.on('click', function(){
   filter.removeClass('active');
   $(this).addClass('active');
 });
 
 //Slider sponsors on the page about
-var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
+const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   wrapperClass: 'firm__sponsors-wrapper',
   slideClass: 'firm__sponsors-slide',
   mousewheel: true,
@@ -161,7 +120,39 @@ var sponsorsSlider = new Swiper('.firm__sponsors-slider', {
     nextEl: '.firm__sponsors-next',
     prevEl: '.firm__sponsors-prev',
   },
+  breakpoints: {
+    320: {
+      spaceBetween: 25,
+      slidesPerGroup: 2,
+      speed: 300,
+    },
+    881: {
+      spaceBetween: 40,
+      slidesPerGroup: 3,
+      speed: 300,
+    },
+    1100: {
+      spaceBetween: 50,
+      slidesPerGroup: 5,
+      speed: 1000,
+    },
+  }
 });
 
-
+function resizeScrenn() {
+  if ($(window).width() <=  1101) {
+    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+  }
+}
+resizeScrenn();
+$(window).resize(function () {
+  resizeScrenn();
 });
+
+  //Mobile scripts
+  $(document).on('touchstart', () => {
+    $('body').addClass('mobile');
+    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+  });
+});
+
