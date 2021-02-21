@@ -38,118 +38,12 @@ $(function() {
     $('.cursor').removeClass('active hide').addClass('leave hidenormal');
   });
 
-
-//page scrolling script
-var fullpage = new Swiper('.fullpage', {
-  wrapperClass: 'fullpage-wrapper',
-  slideClass: 'fullpage-slide',
-  direction: 'vertical',
-  allowTouchMove: false,
-  slidesPerView: 1,
-  speed: 800,
-  mousewheel: true,
-});
-
-//Hide/show header
-fullpage.on('slideChangeTransitionEnd', function(){
-  if (fullpage.activeIndex == 0) {
-    $('.header').addClass('show');
-  } else{
-    $('.header').removeClass('show');
-  }
-});
-
-//Scroll for fullpage
-const scroll = new Swiper('.swiper-container', {
-  direction: 'vertical',
-  slidesPerView: 'auto',
-  freeMode: true,
-  allowTouchMove: false,
-  nested: true,
-  mousewheel: true,
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
-//Remove the stagnant scrolling when adaptive
-function resizeScrenn() {
-  if ($(window).width() <=  880) {
-    fullpage.destroy(true, true);
-    scroll.destroy(true, true);
-    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
-  }
-}
-resizeScrenn();
-$(window).resize(function () {
-  resizeScrenn();
-});
-
-
-
   //stylization of the select
   $('.custom-select').styler();
 
   $('.burger-btn').on('click', function(){
     $('.tab').toggleClass('active');
   });
-
-//page scrolling script
-const projectSlider = new Swiper('.projects__slider', {
-  wrapperClass: 'projects__slider-wrapper',
-  slideClass: 'projects__slide',
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  loop: true,
-  pagination: {
-    el: '.projects__slider-pagination',
-    type: 'fraction',
-  },
-  breakpoints: {
-    320: {
-      spaceBetween: 40,
-    },
-    521: {
-      spaceBetween: 84,
-    },
-    881: {
-      spaceBetween: 128,
-    },
-  }
-});
-
-//Slider on the page work
-const workslider = new Swiper('.work__slider', {
-  wrapperClass: 'work__slider-wrapper',
-  slideClass: 'work__slide',
-  mousewheel: true,
-  normalizeSlideIndex: true,
-  spaceBetween: 200,
-  direction: 'vertical',
-  allowTouchMove: false,
-  effect: 'fade',
-  loop: true,
-  observer: true,
-  observeParents: true,
-  observeSlideChildren: true,
-  hashNavigation: true,
-  fadeEffect: {
-    crossFade: true
-  },
-  pagination: {
-    el: '.work__pagination',
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  },
-  on: {
-    init: function () {
-      $('.work__slider').removeClass('hide');
-    },
-  },
-});
-
 
 //Gallery for each slide on the page work
 $('.work__slide-images, .service__article').each(function(){
@@ -202,17 +96,39 @@ const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
     nextEl: '.firm__sponsors-next',
     prevEl: '.firm__sponsors-prev',
   },
+  breakpoints: {
+    320: {
+      spaceBetween: 25,
+      slidesPerGroup: 2,
+      speed: 300,
+    },
+    881: {
+      spaceBetween: 40,
+      slidesPerGroup: 3,
+      speed: 300,
+    },
+    1100: {
+      spaceBetween: 50,
+      slidesPerGroup: 5,
+      speed: 1000,
+    },
+  }
 });
 
-
-//Mobile scripts
-$(document).on('touchstart', () => {
-  $('body').addClass('mobile');
-  fullpage.destroy(true, true);
-  scroll.destroy(true, true);
-  $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+function resizeScrenn() {
+  if ($(window).width() <=  1101) {
+    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+  }
+}
+resizeScrenn();
+$(window).resize(function () {
+  resizeScrenn();
 });
 
-
+  //Mobile scripts
+  $(document).on('touchstart', () => {
+    $('body').addClass('mobile');
+    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
+  });
 });
 
