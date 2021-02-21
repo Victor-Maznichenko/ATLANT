@@ -45,33 +45,6 @@ $(function() {
     $('.tab').toggleClass('active');
   });
 
-<<<<<<< HEAD
-=======
-//page scrolling script
-const projectSlider = new Swiper('.projects__slider', {
-  wrapperClass: 'projects__slider-wrapper',
-  slideClass: 'projects__slide',
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  loop: true,
-  pagination: {
-    el: '.projects__slider-pagination',
-    type: 'fraction',
-  },
-  breakpoints: {
-    320: {
-      spaceBetween: 40,
-    },
-    521: {
-      spaceBetween: 84,
-    },
-    881: {
-      spaceBetween: 128,
-    },
-  }
-});
-
->>>>>>> 75015cb845456cafe32b757faec73485be432e7f
 //Gallery for each slide on the page work
 $('.work__slide-images, .service__article').each(function(){
   $(this).magnificPopup({
