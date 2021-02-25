@@ -405,14 +405,6 @@ h6 {
   line-height: 108%;
 }
 
-.mobile .bg {
-  background-size: 0;
-}
-
-.fullpage-none .bg {
-  background-size: 0;
-}
-
 .fullpage-none .fullpage {
   height: auto;
   overflow: visible;
@@ -567,9 +559,13 @@ h6 {
   z-index: -2;
   height: 100vh;
   width: 100vw;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
+}
+
+.all-background.fixed {
+  position: fixed;
 }
 
 .mobile .main__background {
@@ -2659,7 +2655,7 @@ h6 {
     display: none;
   }
 
-  .bg {
+  .all-background {
     background-size: 0;
   }
 
