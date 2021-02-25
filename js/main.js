@@ -38,12 +38,14 @@ $(function() {
     $('.cursor').removeClass('active hide').addClass('leave hidenormal');
   });
 
-  //stylization of the select
-  $('.custom-select').styler();
-
   $('.burger-btn').on('click', function(){
     $('.tab').toggleClass('active');
   });
+
+//Select region
+$('.header-reg__top').on('click', function(){
+  $(this).parent().toggleClass('active');
+});
 
 //Gallery for each slide on the page work
 $('.work__slide-images, .service__article').each(function(){
@@ -84,6 +86,9 @@ const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   mousewheel: true,
   spaceBetween: 50,
   slidesPerView: 'auto',
+  observer: true,
+  observeSlideChildren: true,
+  observeParents: true,
   speed: 1000,
   slidesPerGroup: 5,
   nested: true,
