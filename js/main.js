@@ -25,6 +25,16 @@ function parallax(e){
 
 $(function() {
 
+
+  //Animation header
+  $(window).scroll(function(){
+    if($(window).scrollTop() > 60){
+      $('.header').removeClass('show');
+    } else{
+      $('.header').addClass('show');
+    }
+  });
+
   $('a, input, textarea, button, .pointer').on('mouseenter', function(){
     $('.cursor').addClass('active').removeClass('leave');
   });

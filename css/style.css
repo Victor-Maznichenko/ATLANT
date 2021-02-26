@@ -772,7 +772,7 @@ h6 {
 }
 
 .header__bottom {
-  padding-top: calc(15px + (30 - 15) * ((100vh - 600px) / (900 - 600)));
+  padding-top: 20px;
 }
 
 .header-contacts {
@@ -2234,7 +2234,7 @@ h6 {
 }
 
 .projects__inner {
-  padding: 125px 0 150px;
+  padding: 127px 0 150px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -2276,6 +2276,7 @@ h6 {
 .projects__article-data {
   color: var(--yellow);
   margin-bottom: 10px;
+  display: block;
 }
 
 .projects__article-title {
@@ -3379,6 +3380,10 @@ h6 {
 
   .about__inner {
     min-height: calc(224px + (624 - 224) * ((100vh - 500px) / (900 - 500)));
+  }
+
+  .header__bottom {
+    padding-top: calc(15px + (20 - 15) * ((100vh - 600px) / (900 - 600)));
   }
 }
 
