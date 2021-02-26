@@ -797,9 +797,9 @@ h6 {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
-  -webkit-transform: scale(3.7) translate(21px, 25px);
-      -ms-transform: scale(3.7) translate(21px, 25px);
-          transform: scale(3.7) translate(21px, 25px);
+  -webkit-transform: scale(1) translate(0, 0);
+      -ms-transform: scale(1) translate(0, 0);
+          transform: scale(1) translate(0, 0);
 }
 
 .header__bottom-logo.hide-logo {
