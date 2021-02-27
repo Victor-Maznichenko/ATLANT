@@ -130,20 +130,5 @@ const sponsorsSlider = new Swiper('.firm__sponsors-slider', {
   }
 });
 
-function resizeScrenn() {
-  if ($(window).width() <=  1101) {
-    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
-  }
-}
-resizeScrenn();
-$(window).resize(function () {
-  resizeScrenn();
-});
-
-  //Mobile scripts
-  $(document).on('touchstart', () => {
-    $('body').addClass('mobile');
-    $('.wrapper').removeClass('wrapper-fullpage').addClass('fullpage-none');
-  });
 });
 

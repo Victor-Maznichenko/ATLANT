@@ -797,20 +797,31 @@ h6 {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
+  -webkit-animation: none;
+          animation: none;
   -webkit-transform: scale(1) translate(0, 0);
       -ms-transform: scale(1) translate(0, 0);
           transform: scale(1) translate(0, 0);
 }
 
+.header__bottom-logo.logo-fullpage {
+  -webkit-transform: scale(4.3) translate(24px, 41px);
+      -ms-transform: scale(4.3) translate(24px, 41px);
+          transform: scale(4.3) translate(24px, 41px);
+}
+
 .header__bottom-logo.hide-logo {
+  -webkit-transform: scale(4.3) translate(24px, 41px);
+      -ms-transform: scale(4.3) translate(24px, 41px);
+          transform: scale(4.3) translate(24px, 41px);
   -webkit-animation: logoShow 0.5s forwards;
           animation: logoShow 0.5s forwards;
 }
 
 @-webkit-keyframes logoShow {
   0% {
-    -webkit-transform: scale(3.7) translate(21px, 25px);
-            transform: scale(3.7) translate(21px, 25px);
+    -webkit-transform: scale(4.3) translate(24px, 41px);
+            transform: scale(4.3) translate(24px, 41px);
   }
 
   100% {
@@ -821,8 +832,8 @@ h6 {
 
 @keyframes logoShow {
   0% {
-    -webkit-transform: scale(3.7) translate(21px, 25px);
-            transform: scale(3.7) translate(21px, 25px);
+    -webkit-transform: scale(4.3) translate(24px, 41px);
+            transform: scale(4.3) translate(24px, 41px);
   }
 
   100% {
@@ -846,8 +857,8 @@ h6 {
   }
 
   100% {
-    -webkit-transform: scale(3.7) translate(21px, 25px);
-            transform: scale(3.7) translate(21px, 25px);
+    -webkit-transform: scale(4.3) translate(24px, 41px);
+            transform: scale(4.3) translate(24px, 41px);
   }
 }
 
@@ -858,8 +869,8 @@ h6 {
   }
 
   100% {
-    -webkit-transform: scale(3.7) translate(21px, 25px);
-            transform: scale(3.7) translate(21px, 25px);
+    -webkit-transform: scale(4.3) translate(24px, 41px);
+            transform: scale(4.3) translate(24px, 41px);
   }
 }
 
@@ -889,8 +900,8 @@ h6 {
 }
 
 .header-reg.active .header-reg__top img {
-  -webkit-transform: rotateX(-180deg);
-          transform: rotateX(-180deg);
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
 }
 
 .header-reg.active .header-reg__dropdown {
@@ -914,8 +925,8 @@ h6 {
   -webkit-transition: all .4s;
   -o-transition: all .4s;
   transition: all .4s;
-  -webkit-transform: rotateX(0);
-          transform: rotateX(0);
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
 }
 
 .header-reg__dropdown {
@@ -1079,9 +1090,6 @@ h6 {
 
 .main__background {
   position: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -1093,6 +1101,9 @@ h6 {
 .main__background span {
   display: block;
   width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: calc(100vh + (150px + (300 - 150) * ((100vh - 600px) / (900 - 600))));
   -webkit-animation: grow 150s linear 15ms infinite;
           animation: grow 150s linear 15ms infinite;
@@ -1374,7 +1385,7 @@ h6 {
   z-index: 1;
   bottom: auto;
   top: 108px;
-  padding-right: calc(70px + (350 - 70) * ((100vw - 881px) / (1440 - 881)));
+  padding-right: calc(75px + (355 - 75) * ((100vw - 881px) / (1440 - 881)));
   right: 350px;
   text-align: right;
   font-weight: bold;
@@ -1491,30 +1502,30 @@ h6 {
 }
 
 .about__item:nth-child(1) {
-  left: 10.68%;
+  left: 14.68%;
   top: 0;
 }
 
 .about__item:nth-child(2) {
-  left: 0;
+  left: 4%;
   top: 36.45%;
 }
 
 .about__item:nth-child(3) {
   bottom: 0;
-  right: 49%;
+  right: 53%;
   -webkit-transform: translateX(50%);
       -ms-transform: translateX(50%);
           transform: translateX(50%);
 }
 
 .about__item:nth-child(4) {
-  right: 0;
+  right: 4%;
   top: 36.45%;
 }
 
 .about__item:nth-child(5) {
-  right: 13.68%;
+  right: 17.68%;
   top: 0;
 }
 
@@ -1544,11 +1555,15 @@ h6 {
           transform: translateX(-100%);
 }
 
+.about__logo {
+  margin-top: -85px;
+}
+
 .about__logo,
 .about__logo-bg {
   display: block;
   pointer-events: none;
-  margin-top: -85px;
+  margin-top: -120px;
 }
 
 .about__logo-bg {
@@ -1563,7 +1578,7 @@ h6 {
 
 .contacts {
   position: relative;
-  padding: 120px 0 40px;
+  padding: 178px 0 40px;
   z-index: 1;
 }
 
@@ -1609,7 +1624,7 @@ h6 {
 }
 
 .contacts__info-bottom {
-  padding: 30px;
+  padding: 50px 30px;
   background-color: var(--black);
   -webkit-box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.15);
           box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.15);
@@ -1620,6 +1635,7 @@ h6 {
 .contacts__callback-title {
   font-size: 36px;
   line-height: 150%;
+  text-transform: none;
 }
 
 .contacts__info-item + .contacts__info-item {
@@ -2244,6 +2260,10 @@ h6 {
   margin-bottom: 20px;
 }
 
+.projects__slider-pagination {
+  letter-spacing: -4px;
+}
+
 .projects__articles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2797,6 +2817,46 @@ h6 {
     line-height: 110%;
     font-size: 28px;
   }
+
+  .about__logo {
+    max-width: 250px;
+  }
+
+  .about__item-title {
+    font-size: 38px;
+  }
+
+  .about__item-title.better:before {
+    font-size: 15px;
+  }
+
+  .about__item-title {
+    font-size: 35px;
+  }
+
+  .about__item:nth-child(1) {
+    left: 10.68%;
+  }
+
+  .about__item:nth-child(2) {
+    left: 0;
+  }
+
+  .about__item:nth-child(3) {
+    right: 49%;
+  }
+
+  .about__item:nth-child(4) {
+    right: 0;
+  }
+
+  .about__item:nth-child(5) {
+    right: 13.68%;
+  }
+
+  .main__list li:hover {
+    letter-spacing: 2.5px;
+  }
 }
 
 @media (max-width: 880px) {
@@ -2812,14 +2872,6 @@ h6 {
     font-size: 15px;
   }
 
-  .about__item-title {
-    font-size: 38px;
-  }
-
-  .about__item-title.better:before {
-    font-size: 15px;
-  }
-
   .projects__slide-img {
     max-width: 355px;
     margin-bottom: 10px;
@@ -2832,10 +2884,6 @@ h6 {
   .projects__slide-title {
     font-size: 19px !important;
     line-height: 125%;
-  }
-
-  .about__item-title {
-    font-size: 35px;
   }
 
   .services-item__num {
@@ -3093,7 +3141,7 @@ h6 {
   }
 
   .fullpage-none .main {
-    padding-top: 80px;
+    padding-top: 150px;
   }
 
   .work__pagination {
@@ -3133,6 +3181,10 @@ h6 {
   .about__title {
     margin-bottom: 35px;
     font-size: calc(30px + (50 - 30) * ((100vw - 320px)/ (650 - 320)));
+  }
+
+  .contacts {
+    padding-top: 100px;
   }
 }
 
