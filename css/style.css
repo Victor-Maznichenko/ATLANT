@@ -799,6 +799,7 @@ h6 {
   transition: all .5s;
   -webkit-animation: none;
           animation: none;
+  display: block;
   -webkit-transform: scale(1) translate(0, 0);
       -ms-transform: scale(1) translate(0, 0);
           transform: scale(1) translate(0, 0);
@@ -1078,7 +1079,7 @@ h6 {
 
 .main {
   text-transform: uppercase;
-  padding-top: calc(90px + (180 - 90) * ((100vh - 600px) / (900 - 600)));
+  padding-top: 180px;
   background-color: transparent;
   position: relative;
   background-size: 0;
@@ -1086,6 +1087,7 @@ h6 {
 
 .main__img {
   opacity: 0;
+  display: block;
 }
 
 .main__background {
@@ -1137,11 +1139,17 @@ h6 {
   position: absolute;
   top: 34px;
   right: 150px;
+  text-transform: none;
 }
 
 .main__title {
   margin-bottom: 40px;
-  color: var(--yellow);
+  color: transparent;
+  background-color: var(--yellow);
+  display: inline-block;
+  -webkit-background-clip: text;
+          background-clip: text;
+  /*text-shadow: 0px 0px 2px var(--yellow), 0 0 1px rgba(#000, 0.8), 0px 0px 2px var(--yellow);*/
 }
 
 .main__descr {
@@ -1313,12 +1321,17 @@ h6 {
 .projects__slide-img {
   display: block;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .projects__slide-title {
   font-weight: bold;
   font-size: 36px;
   line-height: 150%;
+}
+
+.projects__slide {
+  min-width: 555px;
 }
 
 .projects__slider,
@@ -1719,7 +1732,7 @@ h6 {
 
 .work {
   background-size: cover;
-  padding-top: 125px;
+  padding-top: 175px;
 }
 
 .work__inner {
@@ -3423,7 +3436,7 @@ h6 {
   }
 
   .projects__top {
-    margin-bottom: calc(40px + (120 - 40) * ((100vh - 400px) / (900 - 400)));
+    margin-bottom: calc(20px + (120 - 20) * ((100vh - 400px) / (900 - 400)));
   }
 
   .projects__slide-title {
@@ -3437,9 +3450,131 @@ h6 {
   .header__bottom {
     padding-top: calc(15px + (20 - 15) * ((100vh - 600px) / (900 - 600)));
   }
+
+  .header__bottom-logo.logo-fullpage {
+    -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+        -ms-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+            transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+  }
+
+  .header__bottom-logo.hide-logo {
+    -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+        -ms-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+            transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+    -webkit-animation: logoShow 0.5s forwards;
+            animation: logoShow 0.5s forwards;
+  }
+
+@-webkit-keyframes logoShow {
+    0% {
+      -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+              transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+    }
+
+    100% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+    }
+}
+
+@keyframes logoShow {
+    0% {
+      -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+              transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+    }
+
+    100% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+    }
+}
+
+  .header__bottom-logo.show-logo {
+    -webkit-transform: scale(1) translate(0, 0);
+        -ms-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-animation: logoHide 0.5s 0.3s forwards;
+            animation: logoHide 0.5s 0.3s forwards;
+  }
+
+@-webkit-keyframes logoHide {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+      -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+              transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+    }
+}
+
+@keyframes logoHide {
+    0% {
+      -webkit-transform: scale(1) translate(0, 0);
+              transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+      -webkit-transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+              transform: scale(4.3) translateX(24px) translateY(calc(21px + (41 - 21) * ((100vh - 600px) / (900 - 600))));
+    }
+}
+
+  .main {
+    padding-top: calc(135px + (180 - 135) * ((100vh - 400px)/ (900 - 400)));
+  }
+
+  .projects__slide {
+    min-width: calc(355px + (555 - 355) * ((100vh - 400px)/ (900 - 400)));
+  }
+
+  .contacts {
+    padding-top: calc(90px + (178 - 90) * ((100vh - 600px)/ (900 - 600)));
+  }
+
+  .contacts__callback-title {
+    margin-bottom: calc(20px + (80 - 20) * ((100vh - 600px)/ (900 - 600)));
+  }
+
+  .contacts__callback-textarea {
+    margin-top: calc(30px + (60 - 30) * ((100vh - 400px)/ (900 - 400)));
+  }
+
+  .contacts__callback-fields {
+    margin-bottom: calc(30px + (50 - 30) * ((100vh - 400px)/ (900 - 400)));
+  }
+
+  .contacts__info {
+    min-height: calc(280px + (480 - 280) * ((100vh - 550px)/ (900 - 550)));
+  }
+
+  .contacts__info-item + .contacts__info-item {
+    margin-top: calc(20px + (60 - 20) * ((100vh - 550px)/ (900 - 550)));
+  }
 }
 
 @media (max-height: 600px) {
+  .contacts__info-item + .contacts__info-item {
+    margin-top: 20px;
+  }
+
+  .footer__inner {
+    padding: 10px 0;
+  }
+
+  .contacts__callback-title {
+    margin-bottom: 20px;
+  }
+
+  .contacts {
+    padding-top: 90px;
+  }
+
+  .contacts__info-subitem + .contacts__info-subitem {
+    margin-top: 0;
+  }
+
   .main__title {
     margin-bottom: 0;
   }
@@ -3458,5 +3593,13 @@ h6 {
 
   .projects__slide-title {
     line-height: 100%;
+  }
+
+  .header__bottom-logo.logo-fullpage {
+    -webkit-transform: scale(1) translate(0, 0);
+        -ms-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-animation: none !important;
+            animation: none !important;
   }
 }
