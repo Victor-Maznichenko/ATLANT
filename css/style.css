@@ -393,6 +393,8 @@ h6 {
 .title {
   font-weight: 800;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: -1.5px -1.5px 2px black;
 }
 
 .title-h1 {
@@ -2113,7 +2115,7 @@ h6 {
 }
 
 .firm__inner {
-  padding: 125px 0 195px;
+  padding: 190px 0 195px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -2348,7 +2350,7 @@ h6 {
 }
 
 .technics__inner {
-  padding: 125px 0 140px;
+  padding: 190px 0 140px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -2434,7 +2436,7 @@ h6 {
 }
 
 .service__inner {
-  padding: 125px 0 150px;
+  padding: 227px 0 150px;
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 100vh;
@@ -2447,6 +2449,10 @@ h6 {
 
 .service__title {
   margin-bottom: 20px;
+}
+
+.service__article picture {
+  display: block;
 }
 
 .service__article h2 {
@@ -2584,7 +2590,7 @@ h6 {
 
 @media (max-width: 1100px) {
   .service__inner {
-    padding: 100px 0 60px;
+    padding: 190px 0 60px;
   }
 
   .contacts__callback {
@@ -2643,12 +2649,12 @@ h6 {
   }
 
   .work__inner {
-    padding: 125px 0 60px;
+    padding: 190px 0 60px;
   }
 
   .projects__inner {
     background-size: 0;
-    padding: 125px 0 100px;
+    padding: 190px 0 100px;
   }
 
   .technics__table-wrapper {
@@ -2938,7 +2944,7 @@ h6 {
   }
 
   .technics__inner {
-    padding: 95px 0 70px;
+    padding: 190px 0 70px;
   }
 
   .about__logo,
