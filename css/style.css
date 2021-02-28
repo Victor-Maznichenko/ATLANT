@@ -393,8 +393,6 @@ h6 {
 .title {
   font-weight: 800;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  text-shadow: -1.5px -1.5px 2px black;
 }
 
 .title-h1 {
