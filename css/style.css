@@ -605,8 +605,9 @@ h6 {
 .input {
   padding: 5px 0;
   border-bottom: 1px solid #fff;
-  -o-border-image: url(../images/border-contacts.svg) 1;
-     border-image: url(../images/border-contacts.svg) 1;
+  -o-border-image: url(../images/border-contacts.svg) 1 1 round;
+     border-image: url(../images/border-contacts.svg) 1 1 round;
+  border-image-slice: 0 0 100%;
   width: 100%;
 }
 
