@@ -3098,6 +3098,12 @@ h6 {
             animation: none !important;
   }
 
+  .header__bottom-logo.logo-fullpage {
+    -webkit-transform: scale(1) translate(0, 0) !important;
+        -ms-transform: scale(1) translate(0, 0) !important;
+            transform: scale(1) translate(0, 0) !important;
+  }
+
   .main__title {
     margin-bottom: 20px;
   }
@@ -3122,7 +3128,7 @@ h6 {
   }
 
   .main__img {
-    opacity: 1;
+    display: none;
     max-height: calc(120px + (170 - 120) * ((100vh - 320px) / (650 - 320)));
     margin-bottom: 15px;
   }
