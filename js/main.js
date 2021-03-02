@@ -24,6 +24,21 @@ function parallax(e){
 }
 
 $(function() {
+  //Remove the cursor scrolling when adaptive
+  function resizeScrennn() {
+    if ($(window).width() <=  920) {
+      $('body').addClass('mobile');
+    }
+  }
+  resizeScrennn();
+  $(window).resize(function () {
+    resizeScrennn();
+  });
+
+  //Mobile scripts
+  $(document).on('touchstart', () => {
+    $('body').addClass('mobile');
+  });
 
 
   //Animation header
