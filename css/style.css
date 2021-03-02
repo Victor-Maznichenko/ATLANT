@@ -2501,7 +2501,6 @@ h6 {
 @media (max-width: 1440px) {
   .title-h1 {
     font-size: calc(64px + (72 - 64) * ((100vw - 1024px) / (1440 - 1024)));
-    line-height: calc(114.2% + (147.2 - 114.2) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .firm__sponsors-slide img {
@@ -2557,7 +2556,7 @@ h6 {
   }
 
   .title-h1 {
-    line-height: calc(114% + (120 - 114) * ((100vw - 1024px) / (1366 - 1024)));
+    line-height: 100%;
   }
 
   .services__info-title {
