@@ -1340,6 +1340,23 @@ h6 {
   min-width: 555px;
 }
 
+.projects__slider-btns {
+  display: none;
+  text-align: right;
+}
+
+.projects__slider-btn {
+  display: inline-block;
+  outline: none;
+}
+
+.projects__slider-next {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  margin-left: 20px;
+  padding-right: 15px;
+}
+
 .projects__slider,
 .firm__sponsors-slider {
   margin-left: auto;
@@ -2754,10 +2771,18 @@ h6 {
 }
 
 @media (max-width: 980px) {
+  .projects__slider-btns {
+    display: block;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
   .projects__slide {
     max-width: calc(100vw - 20px);
     width: 100%;
-    min-width: 100%;
+    min-width: calc(100vw - 20px);
   }
 
   .services__inner {
